@@ -16,7 +16,7 @@ public class MyChatServerHandler extends SimpleChannelInboundHandler<String>{
         Channel channel = ctx.channel();
         channelGroup.forEach(ch -> {
             if(channel != ch){
-                ch.writeAndFlush(channel.remoteAddress() + "发送的消息" + msg + "\n");
+                ch.writeAndFlush(channel.remoteAddress() + "发送的消息:" + msg + "\n");
             }else {
                 ch.writeAndFlush("[自己]" + msg + "\n");
             }
@@ -45,6 +45,8 @@ public class MyChatServerHandler extends SimpleChannelInboundHandler<String>{
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
         Channel channel = ctx.channel();
         channelGroup.writeAndFlush("[服务器] - " + channel.remoteAddress() + ",id:" + channel.id() + "离开\n");
+
+        System.out.println("channelGroup的大小:" + channelGroup.size());
     }
 
     /**
