@@ -25,7 +25,7 @@ public class TestServer {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ch.pipeline().addLast(new ProtobufEncoder())
-                                    .addLast(new ProtobufDecoder(MyDataInfo.Person.getDefaultInstance()))
+                                    .addLast(new ProtobufDecoder(MyDataInfo.MyMessage.getDefaultInstance()))
                                     .addLast(new ProtobufVarint32FrameDecoder())
                                     .addLast(new ProtobufVarint32LengthFieldPrepender())
                                     .addLast(new TestServerHandler());
