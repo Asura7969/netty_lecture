@@ -59,6 +59,102 @@ public final class StudentServiceGrpc {
      return getGetRealNameByUserNameMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.gwz.proto.StudentRequest,
+      com.gwz.proto.StudentRespones> getGetStidentsByAgeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetStidentsByAge",
+      requestType = com.gwz.proto.StudentRequest.class,
+      responseType = com.gwz.proto.StudentRespones.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.gwz.proto.StudentRequest,
+      com.gwz.proto.StudentRespones> getGetStidentsByAgeMethod() {
+    io.grpc.MethodDescriptor<com.gwz.proto.StudentRequest, com.gwz.proto.StudentRespones> getGetStidentsByAgeMethod;
+    if ((getGetStidentsByAgeMethod = StudentServiceGrpc.getGetStidentsByAgeMethod) == null) {
+      synchronized (StudentServiceGrpc.class) {
+        if ((getGetStidentsByAgeMethod = StudentServiceGrpc.getGetStidentsByAgeMethod) == null) {
+          StudentServiceGrpc.getGetStidentsByAgeMethod = getGetStidentsByAgeMethod = 
+              io.grpc.MethodDescriptor.<com.gwz.proto.StudentRequest, com.gwz.proto.StudentRespones>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "com.gwz.proto.StudentService", "GetStidentsByAge"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.gwz.proto.StudentRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.gwz.proto.StudentRespones.getDefaultInstance()))
+                  .setSchemaDescriptor(new StudentServiceMethodDescriptorSupplier("GetStidentsByAge"))
+                  .build();
+          }
+        }
+     }
+     return getGetStidentsByAgeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.gwz.proto.StudentRequest,
+      com.gwz.proto.StudentResponesList> getGetStudentsWapperByAgesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetStudentsWapperByAges",
+      requestType = com.gwz.proto.StudentRequest.class,
+      responseType = com.gwz.proto.StudentResponesList.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<com.gwz.proto.StudentRequest,
+      com.gwz.proto.StudentResponesList> getGetStudentsWapperByAgesMethod() {
+    io.grpc.MethodDescriptor<com.gwz.proto.StudentRequest, com.gwz.proto.StudentResponesList> getGetStudentsWapperByAgesMethod;
+    if ((getGetStudentsWapperByAgesMethod = StudentServiceGrpc.getGetStudentsWapperByAgesMethod) == null) {
+      synchronized (StudentServiceGrpc.class) {
+        if ((getGetStudentsWapperByAgesMethod = StudentServiceGrpc.getGetStudentsWapperByAgesMethod) == null) {
+          StudentServiceGrpc.getGetStudentsWapperByAgesMethod = getGetStudentsWapperByAgesMethod = 
+              io.grpc.MethodDescriptor.<com.gwz.proto.StudentRequest, com.gwz.proto.StudentResponesList>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "com.gwz.proto.StudentService", "GetStudentsWapperByAges"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.gwz.proto.StudentRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.gwz.proto.StudentResponesList.getDefaultInstance()))
+                  .setSchemaDescriptor(new StudentServiceMethodDescriptorSupplier("GetStudentsWapperByAges"))
+                  .build();
+          }
+        }
+     }
+     return getGetStudentsWapperByAgesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.gwz.proto.StreamRespones,
+      com.gwz.proto.StreamRespones> getBiTalkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BiTalk",
+      requestType = com.gwz.proto.StreamRespones.class,
+      responseType = com.gwz.proto.StreamRespones.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<com.gwz.proto.StreamRespones,
+      com.gwz.proto.StreamRespones> getBiTalkMethod() {
+    io.grpc.MethodDescriptor<com.gwz.proto.StreamRespones, com.gwz.proto.StreamRespones> getBiTalkMethod;
+    if ((getBiTalkMethod = StudentServiceGrpc.getBiTalkMethod) == null) {
+      synchronized (StudentServiceGrpc.class) {
+        if ((getBiTalkMethod = StudentServiceGrpc.getBiTalkMethod) == null) {
+          StudentServiceGrpc.getBiTalkMethod = getBiTalkMethod = 
+              io.grpc.MethodDescriptor.<com.gwz.proto.StreamRespones, com.gwz.proto.StreamRespones>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "com.gwz.proto.StudentService", "BiTalk"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.gwz.proto.StreamRespones.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.gwz.proto.StreamRespones.getDefaultInstance()))
+                  .setSchemaDescriptor(new StudentServiceMethodDescriptorSupplier("BiTalk"))
+                  .build();
+          }
+        }
+     }
+     return getBiTalkMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -93,6 +189,27 @@ public final class StudentServiceGrpc {
       asyncUnimplementedUnaryCall(getGetRealNameByUserNameMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void getStidentsByAge(com.gwz.proto.StudentRequest request,
+        io.grpc.stub.StreamObserver<com.gwz.proto.StudentRespones> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetStidentsByAgeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.gwz.proto.StudentRequest> getStudentsWapperByAges(
+        io.grpc.stub.StreamObserver<com.gwz.proto.StudentResponesList> responseObserver) {
+      return asyncUnimplementedStreamingCall(getGetStudentsWapperByAgesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.gwz.proto.StreamRespones> biTalk(
+        io.grpc.stub.StreamObserver<com.gwz.proto.StreamRespones> responseObserver) {
+      return asyncUnimplementedStreamingCall(getBiTalkMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -102,6 +219,27 @@ public final class StudentServiceGrpc {
                 com.gwz.proto.MyRequest,
                 com.gwz.proto.MyRespones>(
                   this, METHODID_GET_REAL_NAME_BY_USER_NAME)))
+          .addMethod(
+            getGetStidentsByAgeMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.gwz.proto.StudentRequest,
+                com.gwz.proto.StudentRespones>(
+                  this, METHODID_GET_STIDENTS_BY_AGE)))
+          .addMethod(
+            getGetStudentsWapperByAgesMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                com.gwz.proto.StudentRequest,
+                com.gwz.proto.StudentResponesList>(
+                  this, METHODID_GET_STUDENTS_WAPPER_BY_AGES)))
+          .addMethod(
+            getBiTalkMethod(),
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                com.gwz.proto.StreamRespones,
+                com.gwz.proto.StreamRespones>(
+                  this, METHODID_BI_TALK)))
           .build();
     }
   }
@@ -131,6 +269,30 @@ public final class StudentServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getGetRealNameByUserNameMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getStidentsByAge(com.gwz.proto.StudentRequest request,
+        io.grpc.stub.StreamObserver<com.gwz.proto.StudentRespones> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getGetStidentsByAgeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.gwz.proto.StudentRequest> getStudentsWapperByAges(
+        io.grpc.stub.StreamObserver<com.gwz.proto.StudentResponesList> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getGetStudentsWapperByAgesMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.gwz.proto.StreamRespones> biTalk(
+        io.grpc.stub.StreamObserver<com.gwz.proto.StreamRespones> responseObserver) {
+      return asyncBidiStreamingCall(
+          getChannel().newCall(getBiTalkMethod(), getCallOptions()), responseObserver);
+    }
   }
 
   /**
@@ -156,6 +318,14 @@ public final class StudentServiceGrpc {
     public com.gwz.proto.MyRespones getRealNameByUserName(com.gwz.proto.MyRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetRealNameByUserNameMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.gwz.proto.StudentRespones> getStidentsByAge(
+        com.gwz.proto.StudentRequest request) {
+      return blockingServerStreamingCall(
+          getChannel(), getGetStidentsByAgeMethod(), getCallOptions(), request);
     }
   }
 
@@ -187,6 +357,9 @@ public final class StudentServiceGrpc {
   }
 
   private static final int METHODID_GET_REAL_NAME_BY_USER_NAME = 0;
+  private static final int METHODID_GET_STIDENTS_BY_AGE = 1;
+  private static final int METHODID_GET_STUDENTS_WAPPER_BY_AGES = 2;
+  private static final int METHODID_BI_TALK = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -209,6 +382,10 @@ public final class StudentServiceGrpc {
           serviceImpl.getRealNameByUserName((com.gwz.proto.MyRequest) request,
               (io.grpc.stub.StreamObserver<com.gwz.proto.MyRespones>) responseObserver);
           break;
+        case METHODID_GET_STIDENTS_BY_AGE:
+          serviceImpl.getStidentsByAge((com.gwz.proto.StudentRequest) request,
+              (io.grpc.stub.StreamObserver<com.gwz.proto.StudentRespones>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -219,6 +396,12 @@ public final class StudentServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_GET_STUDENTS_WAPPER_BY_AGES:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.getStudentsWapperByAges(
+              (io.grpc.stub.StreamObserver<com.gwz.proto.StudentResponesList>) responseObserver);
+        case METHODID_BI_TALK:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.biTalk(
+              (io.grpc.stub.StreamObserver<com.gwz.proto.StreamRespones>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -271,6 +454,9 @@ public final class StudentServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new StudentServiceFileDescriptorSupplier())
               .addMethod(getGetRealNameByUserNameMethod())
+              .addMethod(getGetStidentsByAgeMethod())
+              .addMethod(getGetStudentsWapperByAgesMethod())
+              .addMethod(getBiTalkMethod())
               .build();
         }
       }

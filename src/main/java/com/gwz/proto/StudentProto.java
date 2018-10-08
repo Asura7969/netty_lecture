@@ -24,6 +24,26 @@ public final class StudentProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_gwz_proto_MyRespones_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_gwz_proto_StudentRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_gwz_proto_StudentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_gwz_proto_StudentRespones_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_gwz_proto_StudentRespones_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_gwz_proto_StudentResponesList_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_gwz_proto_StudentResponesList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_gwz_proto_StreamRespones_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_gwz_proto_StreamRespones_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -35,10 +55,22 @@ public final class StudentProto {
     java.lang.String[] descriptorData = {
       "\n\rStudent.proto\022\rcom.gwz.proto\"\035\n\tMyRequ" +
       "est\022\020\n\010username\030\001 \001(\t\"\036\n\nMyRespones\022\020\n\010r" +
-      "ealname\030\001 \001(\t2`\n\016StudentService\022N\n\025GetRe" +
-      "alNameByUserName\022\030.com.gwz.proto.MyReque" +
-      "st\032\031.com.gwz.proto.MyRespones\"\000B\037\n\rcom.g" +
-      "wz.protoB\014StudentProtoP\001b\006proto3"
+      "ealname\030\001 \001(\t\"\035\n\016StudentRequest\022\013\n\003age\030\001" +
+      " \001(\005\":\n\017StudentRespones\022\014\n\004name\030\001 \001(\t\022\013\n" +
+      "\003age\030\002 \001(\005\022\014\n\004city\030\003 \001(\t\"N\n\023StudentRespo" +
+      "nesList\0227\n\017studentRespones\030\001 \003(\0132\036.com.g" +
+      "wz.proto.StudentRespones\"\'\n\016StreamRespon" +
+      "es\022\025\n\rrespones_info\030\001 \001(\t2\347\002\n\016StudentSer" +
+      "vice\022N\n\025GetRealNameByUserName\022\030.com.gwz." +
+      "proto.MyRequest\032\031.com.gwz.proto.MyRespon" +
+      "es\"\000\022U\n\020GetStidentsByAge\022\035.com.gwz.proto" +
+      ".StudentRequest\032\036.com.gwz.proto.StudentR" +
+      "espones\"\0000\001\022`\n\027GetStudentsWapperByAges\022\035" +
+      ".com.gwz.proto.StudentRequest\032\".com.gwz." +
+      "proto.StudentResponesList\"\000(\001\022L\n\006BiTalk\022" +
+      "\035.com.gwz.proto.StreamRespones\032\035.com.gwz" +
+      ".proto.StreamRespones\"\000(\0010\001B\037\n\rcom.gwz.p" +
+      "rotoB\014StudentProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -64,6 +96,30 @@ public final class StudentProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_gwz_proto_MyRespones_descriptor,
         new java.lang.String[] { "Realname", });
+    internal_static_com_gwz_proto_StudentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_com_gwz_proto_StudentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_gwz_proto_StudentRequest_descriptor,
+        new java.lang.String[] { "Age", });
+    internal_static_com_gwz_proto_StudentRespones_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_com_gwz_proto_StudentRespones_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_gwz_proto_StudentRespones_descriptor,
+        new java.lang.String[] { "Name", "Age", "City", });
+    internal_static_com_gwz_proto_StudentResponesList_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_com_gwz_proto_StudentResponesList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_gwz_proto_StudentResponesList_descriptor,
+        new java.lang.String[] { "StudentRespones", });
+    internal_static_com_gwz_proto_StreamRespones_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_com_gwz_proto_StreamRespones_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_gwz_proto_StreamRespones_descriptor,
+        new java.lang.String[] { "ResponesInfo", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
