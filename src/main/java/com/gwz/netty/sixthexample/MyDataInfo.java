@@ -74,7 +74,7 @@ public final class MyDataInfo {
   public  static final class MyMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:com.gwz.protobuf.MyMessage)
-      MyMessageOrBuilder {
+      MyMessageOrBuilder, com.google.protobuf.MessageLite {
   private static final long serialVersionUID = 0L;
     // Use MyMessage.newBuilder() to construct.
     private MyMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
