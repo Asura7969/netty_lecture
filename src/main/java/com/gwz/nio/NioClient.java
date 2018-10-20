@@ -9,7 +9,6 @@ import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.time.LocalDateTime;
 import java.util.Set;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -58,13 +57,22 @@ public class NioClient {
                                    }catch (Exception e){
                                        e.printStackTrace();
                                    }
-
                                }
                             });
+                        }
+                        client.register(selector,SelectionKey.OP_READ);
+                    }else if(selectionKey.isReadable()){
+                        SocketChannel client = (SocketChannel)selectionKey.channel();
+                        ByteBuffer readBuffer = ByteBuffer.allocate(1024);
 
+                        int read = client.read(readBuffer);
+                        if(read > 0){
+                            String receiverMessage = new String(readBuffer.array(),0,read);
+                            System.out.println(receiverMessage);
                         }
                     }
                 }
+                ketSet.clear();
             }
         }catch (Exception ex){
             ex.printStackTrace();
