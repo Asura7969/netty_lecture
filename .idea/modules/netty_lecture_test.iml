@@ -9,11 +9,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="netty_lecture_main" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-all:4.1.15.Final" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.protobuf:protobuf-java-util:3.6.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-:" level="project" />
     <orderEntry type="library" name="Gradle: io.grpc:grpc-protobuf:1.15.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.protobuf:protobuf-java:3.6.1" level="project" />
+    <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.thrift:libthrift:0.10.0" level="project" />
     <orderEntry type="library" name="Gradle: io.grpc:grpc-netty-shaded:1.15.1" level="project" />
     <orderEntry type="library" name="Gradle: io.grpc:grpc-stub:1.15.1" level="project" />
@@ -25,7 +23,7 @@
     <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpclient:4.4.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpcore:4.4.1" level="project" />
     <orderEntry type="library" name="Gradle: com.google.api.grpc:proto-google-common-protos:1.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.protobuf:protobuf-java:3.6.1" level="project" />
     <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.9" level="project" />
     <orderEntry type="library" name="Gradle: io.grpc:grpc-context:1.15.1" level="project" />
     <orderEntry type="library" name="Gradle: io.opencensus:opencensus-contrib-grpc-metrics:0.12.3" level="project" />
@@ -33,6 +31,10 @@
     <orderEntry type="library" name="Gradle: com.google.errorprone:error_prone_annotations:2.2.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.0" level="project" />
     <orderEntry type="library" name="Gradle: org.codehaus.mojo:animal-sniffer-annotations:1.17" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-log4j12:1.7.10" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-all:4.1.15.Final" level="project" />
+    <orderEntry type="library" name="Gradle: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.protobuf:protobuf-java-util:3.6.1" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="netty_lecture_main" />
 </module>
