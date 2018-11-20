@@ -1,39 +1,44 @@
-package com.book.two;
+package com.book.decoder.two;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import org.apache.log4j.Logger;
-
-import java.nio.charset.Charset;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class TimeClientHandler extends SimpleChannelInboundHandler {
 
-    private static final Logger logger = Logger.getLogger(TimeClientHandler.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(TimeClientHandler.class.getName());
+
+    private int counter;
+
+    private byte[] req;
 
     private final ByteBuf firestMessage;
 
     public TimeClientHandler() {
-        byte[] req = "QUERY TIME ORDER".getBytes();
+        req = ("QUERY TIME ORDER" + System.getProperty("line.separator")).getBytes();
         firestMessage = Unpooled.buffer(req.length);
         firestMessage.writeBytes(req);
     }
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        ctx.writeAndFlush(firestMessage);
+        ByteBuf message = null;
+        for (int i = 0; i < 100; i++) {
+            message = Unpooled.buffer(req.length);
+            message.writeBytes(req);
+            ctx.writeAndFlush(message);
+        }
     }
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
-        ByteBuf buf = (ByteBuf)msg;
-        byte[] bytes = new byte[buf.readableBytes()];
-        buf.readBytes(bytes);
+        String body = (String)msg;
 
-        String body = new String(bytes, Charset.forName("utf-8"));
-        System.out.println("Now is:" + body);
+        System.out.println("Now is:" + body + "; the counter is : " + ++counter);
     }
 
     @Override

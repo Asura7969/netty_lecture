@@ -1,4 +1,4 @@
-package com.book.two;
+package com.book.decoder.two;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -7,6 +7,8 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.LineBasedFrameDecoder;
+import io.netty.handler.codec.string.StringDecoder;
 
 public class TimeServer {
 
@@ -23,7 +25,11 @@ public class TimeServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(new TimeServerHandler());
+                            ch.pipeline()
+                                    //解决TCP粘包,以 '/r/n' 或 '/n' 为分隔符
+                                    .addLast(new LineBasedFrameDecoder(1024))
+                                    .addLast(new StringDecoder())
+                                    .addLast(new TimeServerHandler());
                         }
                     });
 

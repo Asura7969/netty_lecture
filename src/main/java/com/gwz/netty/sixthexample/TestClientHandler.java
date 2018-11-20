@@ -13,7 +13,7 @@ public class TestClientHandler extends SimpleChannelInboundHandler<MyDataInfo.My
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        MyDataInfo.MyMessage myMessage = null;
+        MyDataInfo.MyMessage myMessage;
 
         int random = new Random().nextInt(3);
         switch (random){
