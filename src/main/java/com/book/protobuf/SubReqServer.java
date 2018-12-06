@@ -1,4 +1,4 @@
-package com.book.proto;
+package com.book.protobuf;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -29,10 +29,10 @@ public class SubReqServer {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ch.pipeline()
-                                    .addLast(new ProtobufEncoder())
-                                    .addLast(new ProtobufDecoder(SubscribeReq.getDefaultInstance()))
                                     .addLast(new ProtobufVarint32FrameDecoder())
+                                    .addLast(new ProtobufDecoder(SubscribeReq.getDefaultInstance()))
                                     .addLast(new ProtobufVarint32LengthFieldPrepender())
+                                    .addLast(new ProtobufEncoder())
                                     .addLast(new SubReqServerHandler());
                         }
                     });
@@ -55,7 +55,7 @@ public class SubReqServer {
         @Override
         protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
             SubscribeReq req = (SubscribeReq)msg;
-            if(!"zhangsan".equalsIgnoreCase(req.getUserName())){
+            if("zhangsan".equalsIgnoreCase(req.getUserName())){
                 System.out.println("Service accept client subscribe req : [" + req.toString() + "]");
                 ctx.writeAndFlush(resp(req.getSubReqID()));
             }

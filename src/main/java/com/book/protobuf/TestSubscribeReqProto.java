@@ -1,10 +1,6 @@
-package com.book.proto;
+package com.book.protobuf;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 public class TestSubscribeReqProto {
 

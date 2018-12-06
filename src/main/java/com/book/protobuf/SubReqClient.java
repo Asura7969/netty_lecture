@@ -1,4 +1,4 @@
-package com.book.proto;
+package com.book.protobuf;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
@@ -10,7 +10,7 @@ import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 
-///Users/gongwenzhou/Documents/protoc-3.6.1-osx-x86_64/bin/protoc --java_out=/Users/gongwenzhou/IdeaProjects/netty_lecture/src/main/java ./SubscribeResp.proto
+//Users/gongwenzhou/Documents/protoc-3.6.1-osx-x86_64/bin/protoc --java_out=/Users/gongwenzhou/IdeaProjects/netty_lecture/src/main/java ./SubscribeResp.proto
 public class SubReqClient {
 
     public static void main(String[] args) {
@@ -25,10 +25,10 @@ public class SubReqClient {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ch.pipeline()
-                                    .addLast(new ProtobufEncoder())
-                                    .addLast(new ProtobufDecoder(SubscribeResp.getDefaultInstance()))
                                     .addLast(new ProtobufVarint32FrameDecoder())
+                                    .addLast(new ProtobufDecoder(SubscribeResp.getDefaultInstance()))
                                     .addLast(new ProtobufVarint32LengthFieldPrepender())
+                                    .addLast(new ProtobufEncoder())
                                     .addLast(new SubReqClientHandler());
                         }
                     });
@@ -56,7 +56,10 @@ public class SubReqClient {
 
         private SubscribeReq.Builder subReq(int i) {
             SubscribeReq.Builder builder = SubscribeReq.newBuilder();
-            builder.setSubReqID(i).setUserName("zhangsan" + i).setAddress("shanghai " + i).setProductName("Netty Book For Protobuf");
+            builder.setSubReqID(i)
+                    .setUserName("zhangsan")
+                    .setAddress("shanghai " + i)
+                    .setProductName("Netty Book For Protobuf");
             return builder;
         }
 
