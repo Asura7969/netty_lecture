@@ -3,6 +3,7 @@ package com.book.netProto.codec;
 import com.book.netProto.struct.Header;
 import com.book.netProto.struct.NettyMessage;
 import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
 
